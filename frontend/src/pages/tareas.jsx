@@ -5,9 +5,10 @@ export default function Tareas (){
 
     return (
         <>
-            <h1>Tareas</h1>
+           <h1>Todas mis tareas</h1>
             
             <Tarea></Tarea>
+            <h2>Tareas borradas</h2>
         </>
     )
 }

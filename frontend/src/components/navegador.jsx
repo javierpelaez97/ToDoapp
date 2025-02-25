@@ -1,25 +1,26 @@
+import Container from 'react-bootstrap/esm/Container'
 
+import NavLink from 'react-bootstrap/esm/NavLink'
+import Nav from 'react-bootstrap/Nav'
+import Navbar from 'react-bootstrap/Navbar'
 
 export default function  Navegador(){
     return(
         <>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
-                    <li>
-                        <a href="/misTareas">Mis tareas</a>
-                    </li>
-                    <li>
-                        <a href="/login">Login</a>
-                    </li>
-                    <li>
-                        <a href="/register">Registro</a>
-                    </li>
-                </ul>
+            <Navbar bg='dark' data-bs-theme="dark">
+                <Container>
+                
+                    <Navbar.Brand href='/' >Home</Navbar.Brand>
+                        <Nav className='me-auto'>
+                            <NavLink href='/misTareas'> Mis Tareas</NavLink>
+                            <NavLink href='/login' >Login</NavLink>
+                            <NavLink href='/register'> Registro</NavLink>
+                            <NavLink href='/area' >Mi perfil</NavLink>
+                        </Nav>
+                
+                </Container>
 
-            </nav>
+            </Navbar>
            
         </>
     )

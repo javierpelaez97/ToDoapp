@@ -1,0 +1,14 @@
+{
+  "usuarios": [
+    {
+      "id": "0",
+      "email": "prueba@prueba.com",
+      "password": "prueba"
+    },
+    {
+      "id": "1b7e",
+      "email": "",
+      "password": ""
+    }
+  ]
+}
