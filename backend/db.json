@@ -3,12 +3,32 @@
     {
       "id": "0",
       "email": "prueba@prueba.com",
+      "password": "prueba",
+      "name": "Javier",
+      "surname": "Pelaez"
+    },
+    {
+      "id": "0b61",
+      "email": "prueba2@prueba.com",
+      "name": "Jose",
+      "surname": "giménez",
       "password": "prueba"
     },
     {
-      "id": "1b7e",
-      "email": "",
-      "password": ""
+      "id": "f2ee",
+      "email": "ejemplo@ejemplo.com",
+      "password": "Prueba",
+      "name": "Javier",
+      "surname": "Pelaez"
+    }
+  ],
+  "tareas": [
+    {
+      "id": "0",
+      "title": "Comprar pan",
+      "descripcion": "esto es una tarea",
+      "id_usuario": "f2ee"
+
     }
   ]
 }

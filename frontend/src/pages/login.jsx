@@ -7,34 +7,25 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import {useForm} from 'react-hook-form';
 import axios from 'axios';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+
 
 
 export default function Login(){
 
+    
 
     const{register, handleSubmit} = useForm();
 
 
 
-    const [user, setUser] = useState(null)
+
+    
+
+        
 
 
-      function doLogin(datos){
-        
-        axios.post("http://localhost:3000/usuarios", datos)
-        .then((response) =>{
-            console.log(response.data)
-            setUser({email: datos.email, password: datos.password})
-            
-        })
-        .catch((err)=>{
-            console.log(err);
-            
-        })
-        
-      }
+      
 
     
 
@@ -43,11 +34,13 @@ export default function Login(){
         
         <Container className='pt-5'>
             <Row>
-                <Col sm={5}>
+                <Col sm={4}>
                     <Image src={Desktop} height={650} width={500}></Image>
                 </Col>
-                <Col sm={7}>
-                    <Form onSubmit={handleSubmit(doLogin)}>
+                <Col sm={7} className='bg-body-secondary'>
+                
+                    <Form onSubmit={handleSubmit(doLogin)} className='p-4'>
+                    <h1>Iniciar sesión</h1>
                         <Form.Group className='mb-3' controlId='formBasicEmail'>
                             <Form.Label>Correo Electrónico</Form.Label>
                             <Form.Control type='email' placeholder='example@correo.com' {...register('email')}></Form.Control>
