@@ -20,7 +20,7 @@ const addTask  = async (req,res)=> {
 
 const getUserTasks = async (req, res) => {
     try {
-        const tasks = await Task.find({ userId: req.user.id });
+        const tasks = await Task.find({ userId: req.user });
         return res.json(tasks);
     } catch (error) {
         return res.status(500).json({ message: 'Error al obtener tareas', error });

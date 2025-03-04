@@ -6,17 +6,18 @@ import Image from "react-bootstrap/esm/Image";
 import Registro from "../../public/Images/CleanWork.jpg";
 import Button from "react-bootstrap/esm/Button";
 import axios from "axios";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
+import { SessionContext } from "../contexts/SessionContext";
 
 export default function Register() {
   const { register, handleSubmit } = useForm();
 
-  const [user, setUser] = useState(null);
+  const {login} = useContext (SessionContext)
 
   function doRegister(datos) {
     axios
-      .post("http://localhost:3000/usuarios", datos)
+      .post("http://localhost:5000/api/users/signup", datos)
       .then((response) => {
         console.log(response.data);
         setUser({

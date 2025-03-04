@@ -1,5 +1,5 @@
 
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import './App.css'
 
 import Navegador from './components/navegador'
@@ -7,16 +7,28 @@ import Home from './pages/home'
 import Tareas from './pages/tareas';
 import Login from './pages/login';
 import Register from './pages/register';
+import { useContext,  } from 'react';
+import { SessionContext } from './contexts/SessionContext';
+
+
 
 
 function App() {
 
-  
 
+  const {user} = useContext(SessionContext)
+
+ 
+
+ 
+  
+  
+  
   
 
   return (
     <>
+    
       <header>
         <Navegador></Navegador>
 
@@ -24,8 +36,8 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home></Home>}></Route>
-          <Route path='/misTareas' element={<Tareas></Tareas>}></Route>
-          <Route path='/login' element={<Login></Login>}></Route>
+          <Route path='/misTareas' element={<Tareas ></Tareas>}></Route>
+          <Route path='/login' element={user ? <Navigate to="/misTareas"></Navigate>:<Login></Login>}></Route>
           <Route path='/register' element={<Register></Register>}></Route>
         </Routes>
 

@@ -20,8 +20,7 @@ async function authMiddleware(req,res,next){
             if(!foundUser){                                                 //Si el token decodificado está bien entramos en buscar el usuario
                 return res.status(401).json({msg:"token no valido"})
             }else{
-                console.log("Usuario", foundUser)
-                console.log("ID:", userId)
+                
                 next()
         }
     }

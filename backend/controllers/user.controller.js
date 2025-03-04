@@ -32,7 +32,7 @@ async function login (req, res){
                 return res.status(400).json({msg:"Credenciales no validas"})
             }else{
                 const token = jwt.sign({userId:foundUser._id},process.env.JWT_SECRET, {expiresIn:'1h'})
-                return res.status(200).json({msg:"ok", token:token})
+                return res.status(200).json({msg:"ok", token:token, userId:foundUser})
             }
         }
     }catch(error){
