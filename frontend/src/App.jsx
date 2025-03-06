@@ -18,16 +18,14 @@ function App() {
 
   const {user} = useContext(SessionContext)
 
- 
+  console.log(user);
 
- 
-  
-  
   
   
 
   return (
     <>
+    
     
       <header>
         <Navegador></Navegador>
@@ -36,7 +34,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home></Home>}></Route>
-          <Route path='/misTareas' element={<Tareas ></Tareas>}></Route>
+          <Route path='/misTareas' element={<Tareas usuario={user}></Tareas>}></Route>
           <Route path='/login' element={user ? <Navigate to="/misTareas"></Navigate>:<Login></Login>}></Route>
           <Route path='/register' element={<Register></Register>}></Route>
         </Routes>

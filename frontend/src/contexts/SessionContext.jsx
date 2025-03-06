@@ -27,7 +27,7 @@ export function SessionProvider({children}){
         
         try{
             const response = await axios.post("http://localhost:5000/api/users/login",{"email": email, "password":password})
-            const token= response.data
+            const token= response.data.token 
             const user = response.data
             
             
